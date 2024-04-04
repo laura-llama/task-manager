@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "T-Minus",
+    "name": "Task Manager",
     "description": "Extension that counts down to the first upcoming date saved by user",
     "version": "1.0",
     "icons": {

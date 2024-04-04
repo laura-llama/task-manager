@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="styelsheet.css">
 
-    <title>Countdown</title>
+    <title>Task Manager</title>
 </head>
 <body>
-  <!-- Add a title or some guided text for the user using the heading tags {h1, h2, h3...h6}-->
+  <!-- PT 1: Add a title or some guided text for the user using the heading tags {h1, h2, h3...h6}-->
 
-    <h1 id="info"> Largest Text H1</h1>
-    <h2>Smaller Text</h2>
+    <h1 id="info"> Hey There! </h1>
+    <h2 id="break"> Track your Tasks </h2>
 
-    <!-- Add a button element where for the user to click and add a date  **include btn text**-->
+    <!-- PT 1: Add a button element where for the user to click and add a date  **include btn text**-->
     
-        <!-- {REPLACE W/ CODE}-->
-
+    <!-- <button id="addBtn"> + Add Date </button> -->
     
-
+    <br>
     <div id="input">
-        <!-- Add a form/input element where for the user will input their date/date title-->
-                <!-- {REPLACE W/ CODE}-->
-
+        <!-- PT 1: Add a form/input element where for the user will input their date/date title-->
+                <input type="text" id="breakName"  placeholder="Enter Title"></input>
+                <input type="date" id="newDate"></input>
         <div>
-            <!-- add a button to save the date-->
-                    <!-- {REPLACE W/ CODE}-->
+            <!-- PT: 1 add a button to save the date that the user inputs-->
+            <button  id="saveBtn"> Save</button>
 
         </div>
 
     </div>
     
+    <button id="addBtn"> + Add Date </button>
+
     <!--This div is the container for our timer-->
     <div id="container">
-        <!-- add a default string representation that will be displayed when there are no saved dates -->
+        <!-- PT 1: add a default string representation that will be displayed when there are no saved dates -->
+        <h3 id="timer"> Nothing Yet &#128533; </h3>
+       
     </div>
 
 </body>
-<!-- <script src="script.js"></script> -->
+<script src="script.js"></script>
 </html>
