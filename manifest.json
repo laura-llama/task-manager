@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Task Manager",
-    "description": "Extension that counts down to the first upcoming date saved by user",
+    "description": "A Chrome extension that will count down to the date of an assignment or task",
     "version": "1.0",
     "icons": {
       "16": "ext-icon.png"

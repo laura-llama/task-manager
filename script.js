@@ -6,14 +6,14 @@
  * Which data structure stores data in order and stored contiguously in memory?
  *  */ 
 
-const allbreaks = [];
+const allDates = [];
 /**
  * Create a variable of the appropriate type to contain all the user dates and their corressponding title
  * 
  * Which data structure stores data in pairs?
  *  */ 
 
-const breakMap = new Map();
+const dateMap = new Map();
 
 
 //-----------------------------FUNCTIONS------------------------------------------//
@@ -25,9 +25,8 @@ const breakMap = new Map();
 
 function saveAddedDate() {
 
-
     // STEP 1: get the user input string yyyy-mm-dd and store in a var
-    let breakTitle = document.getElementById("breakName").value;
+    let breakTitle = document.getElementById("taskName").value;
     // STEP2: get the user input string and store in a var
     let dateString = document.getElementById("newDate").value;
     //STEP 3: convert the datestring into a date object and save in a var
@@ -36,14 +35,14 @@ function saveAddedDate() {
     console.log("saved date", dateString)
 
     // STEP 4: add date obj to storage data structure (defined in the variables section)
-    allbreaks.push(newDate);
-    console.log("the array length", allbreaks.length)
+    allDates.push(newDate);
+    console.log("the array length", allDates.length)
     // STEP 5: store date : title pairing (hint: use the set method)
-    breakMap.set(newDate, breakTitle);
+    dateMap.set(newDate, breakTitle);
     //STEP 6: Clear the inputs and remove the input form from dom
 
-    document.getElementById("breakName").value = "";
-    document.getElementById("breakName").value = "";
+    document.getElementById("taskName").value = "";
+    document.getElementById("taskName").value = "";
     document.getElementById("input").style.display = "none"
 
     initTimer() // call to start the timer
@@ -75,8 +74,8 @@ function showInputForm() {
 function initTimer() {
 
 
-    if (allbreaks.length != 0) {
-        allbreaks.sort(); //sort the array
+    if (allDates.length != 0) {
+        allDates.sort(); //sort the array
 
 
         // Update the count down every 1 second
@@ -85,7 +84,7 @@ function initTimer() {
             var todayUTC = new Date(today.getTime() - today.getTimezoneOffset() * 60000); // convert local to utc
 
 
-            var upcomingBreak = allbreaks.find( date => date > todayUTC);
+            var upcomingBreak = allDates.find( date => date > todayUTC);
 
         // Find the distance between now and the count down date
 
@@ -98,7 +97,7 @@ function initTimer() {
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Display the result in the element with id="demo"
-            document.getElementById("break").innerHTML = breakMap.get(upcomingBreak); //should return the val of the break's name
+            document.getElementById("break").innerHTML = dateMap.get(upcomingBreak); //should return the val of the break's name
 
             document.getElementById("timer").innerHTML = days + "d " + hours + "h "
             + minutes + "m " + seconds + "s ";
